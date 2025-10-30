@@ -1,0 +1,14 @@
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+
+from project.models import Task
+from project.project_serializers.task import TaskSerializer
+
+
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    # permission_classes = [IsAuthenticated]
+
+
+
