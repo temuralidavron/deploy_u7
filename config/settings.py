@@ -104,9 +104,9 @@ REST_FRAMEWORK = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "jira_u7",
-        "USER": "postgres",
-        "PASSWORD": "1995",
+        "NAME": "myproject",
+        "USER": "myprojectuser",
+        "PASSWORD": "password",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
