@@ -1,0 +1,19 @@
+# version qatori endi kerak emas (Docker Compose 2.20+ da avtomatik)
+services:
+  web:
+    build: .
+    command: >
+      sh -c "python manage.py migrate &&
+             gunicorn config.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - .:/app
+      - static_volume:/app/static
+      - media_volume:/app/media
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+
+volumes:
+  static_volume:
+  media_volume:
